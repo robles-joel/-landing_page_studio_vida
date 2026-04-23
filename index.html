@@ -1,302 +1,274 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio Vida | Tattoo</title>
+    <!-- Define a codificação de caracteres (acentos, etc) -->
+    <meta charset="UTF-8">
 
-<style>
-:root{
-  --dark:#111;
-  --gray:#f5f5f5;
-  --gold:#ff9800;
-  --white:#fff;
-  --shadow:0 10px 25px rgba(0,0,0,.15);
-  --radius:16px;
-  --max:1200px;
+    <!-- Faz o site ficar responsivo em celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
+    <title>Studio Vida - Tattoo</title>
+
+    <style>
+        /* Reset básico para remover margens e padronizar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo geral do corpo da página */
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: url('bannerinc2.png') no-repeat center/cover;
+            /* background: #333;  /* Cor cinza */
+            color: rgb(255, 255, 255);
+            padding: 120px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: start;
+        }
+
+        /* Seção principal */
+.hero {
+    background: url('imgparabanner6.png') no-repeat center/cover;
+    color: white;
+    padding: 200px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* Caixa de fundo do texto */
+.hero-box {
+    background: rgba(0, 0, 0, 0.55); /* preto transparente */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
 }
 
-body{
-  font-family:Arial, sans-serif;
-  line-height:1.6;
-  color:#333;
-  background:#fff;
+/* Título */
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
 }
 
-img{
-  width:100%;
-  display:block;
+/* Texto */
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-a{
-  text-decoration:none;
-}
+        /* Botão (CTA - chamada para ação) */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ff9800;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
-section{
-  padding:70px 20px;
-}
+        /* Seções padrão */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-.container{
-  max-width:var(--max);
-  margin:auto;
-}
+        /* Container dos benefícios */
+        .features {
+            display: flex; /* Coloca os itens lado a lado */
+            gap: 30px; /* espaço entre as imagens */
+            flex-wrap: wrap; /* Quebra linha em telas menores */
+            justify-content: center;
+        }
 
-/* TOPO */
-header{
-  background:url('bannerinc2.png') center/cover no-repeat;
-  color:var(--white);
-  padding:60px 20px;
-}
+        /* Cada bloco de benefício */
+        .feature {
+            flex: 1 1 250px; /* Responsividade */
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
 
-.top-info{
-  max-width:var(--max);
-  margin:auto;
-}
+        /* Seção do formulário */
+        .form-section {
+            background: #f4f4f4;
+        }
 
-.top-info h3{
-  font-size:1rem;
-  font-weight:500;
-}
+        /* Formulário centralizado */
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
 
-/* HERO */
-.hero{
-  background:url('imgparabanner6.png') center/cover no-repeat;
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
+        /* Campos e botão */
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
 
-.hero-box{
-  max-width:700px;
-  text-align:center;
-  color:#fff;
-  background:rgba(0,0,0,.55);
-  padding:45px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(4px);
-}
+        /* Estilo do botão */
+        button {
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-.hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  margin-bottom:15px;
-}
+        /* Rodapé */
+        footer {
+            background: #333;   
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
 
-.hero p{
-  font-size:1.1rem;
-  margin-bottom:25px;
-}
+        .img-box {
+            position: relative;
+            width: 350px;          /* largura fixa */
+            height: 350px;         /* altura fixa = todas iguais */
+            overflow: hidden;      /* esconde sobra da imagem */
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-/* BOTÃO */
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:var(--gold);
-  color:#fff;
-  border-radius:8px;
-  font-weight:bold;
-  transition:.3s;
-}
+/* efeito ao passar mouse */
+        .img-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+        }
 
-.btn:hover{
-  transform:translateY(-3px);
-  opacity:.9;
-}
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;   /* ajusta sem deformar */
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-/* TITULOS */
-h2{
-  text-align:center;
-  margin-bottom:40px;
-  font-size:2rem;
-}
+/* zoom leve na imagem */
+        .img-box:hover img {
+            transform: scale(1.08);
+        }
 
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.card h3{
-  margin-bottom:10px;
-}
-
-/* GALERIA */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.img-box{
-  position:relative;
-  overflow:hidden;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.img-box img{
-  aspect-ratio:1/1;
-  object-fit:cover;
-  transition:.4s;
-}
-
-.img-box:hover img{
-  transform:scale(1.05);
-}
-
-.img-box h3{
-  position:absolute;
-  top:15px;
-  left:50%;
-  transform:translateX(-50%);
-  color:#fff;
-  background:rgba(0,0,0,.55);
-  padding:6px 14px;
-  border-radius:30px;
-  font-size:.9rem;
-}
-
-/* FORM */
-.form-section{
-  background:var(--gray);
-}
-
-form{
-  max-width:450px;
-  margin:auto;
-}
-
-input,button{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  font-size:1rem;
-}
-
-button{
-  background:var(--dark);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  transition:.3s;
-}
-
-button:hover{
-  opacity:.9;
-}
-
-/* FOOTER */
-footer{
-  background:var(--dark);
-  color:#fff;
-  text-align:center;
-  padding:20px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .hero-box{
-    padding:30px 20px;
-  }
-
-  h2{
-    font-size:1.6rem;
-  }
-}
-</style>
+        .img-box h3 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            color: white;
+            font-size: 15px;
+            background: rgba(0,0,0,0.55);
+            padding: 6px 15px;
+            border-radius: 10px;
+            z-index: 2;
+        }
+    </style>
 </head>
-
 <body>
 
+<!-- Cabeçalho com nome da marca -->
 <header>
-  <div class="top-info">
-    <h3>Horário de Funcionamento</h3>
-    <h3>Segunda a Sexta: 08h às 18h</h3>
-    <h3>Sábado: 08h às 12h</h3>
-    <h3>Domingo: Fechado</h3>
-  </div>
+    <h3>Horário de Funcionamento:</h3>
+    <h3>Segunda a Sexta: (08:00 às 18:00)</h3>
+    <h3>Sábado: (08:00 às 12:00)</h3>
+    <h3>Domingo: (Fechado)</h3>
 </header>
 
+<!-- Seção principal (primeira coisa que o usuário vê) -->
 <section class="hero">
-  <div class="hero-box">
+    <div class="hero-box">
+    
     <h1>Realize seu sonho hoje</h1>
+    
     <p>
-      Tire suas dúvidas com profissionais experientes e faça sua tatuagem com segurança.
-    </p>
+      Tire suas dúvidas com os melhores profissionais do mercado e
+      receba orientação confiável para dar o próximo passo com segurança.
+    </p><br>    
+
+
+    <!-- Botão que leva até o formulário -->
     <a href="#form" class="btn">Entrar em contato</a>
-  </div>
 </section>
 
-<section>
-<div class="container">
-<h2>Dúvidas Frequentes</h2>
+<!-- Seção de benefícios -->
+<section class="section">
+    <h2>Dúvidas Frequentes</h2>
 
-<div class="grid">
-  <div class="card">
-    <h3>Dói fazer tatuagem?</h3>
-    <p>A dor varia conforme a região e a sensibilidade de cada pessoa.</p>
-  </div>
+    <div class="features">
+        <!-- Cada item é um benefício -->
+        <div class="feature">
+            <h3>Dói fazer tatuagem?</h3>
+            <p>A dor varia conforme a área do corpo e a sensibilidade de cada pessoa. Regiões com mais osso ou pouca gordura costumam doer mais.</p>
+        </div>
 
-  <div class="card">
-    <h3>Posso tomar sol depois?</h3>
-    <p>Não. O ideal é esperar cicatrizar completamente.</p>
-  </div>
+        <div class="feature">
+            <h3>Posso tomar sol depois de tatuar?</h3>
+            <p>Não é recomendado. A exposição ao sol pode prejudicar a cicatrização e desbotar a tatuagem. Use proteção após a cicatrização.</p>
+        </div>
 
-  <div class="card">
-    <h3>Preciso me preparar?</h3>
-    <p>Sim. Vá alimentado, descansado e evite álcool.</p>
-  </div>
-</div>
-</div>
+        <div class="feature">
+            <h3>Preciso de algum cuidado antes da tatuagem?</h3>
+            <p>Sim! Evite álcool, durma bem e esteja alimentado. Isso ajuda no processo e evita mal-estar durante a sessão.</p>
+        </div>
+    </div>
 </section>
 
-<section>
-<div class="container">
-<h2>Alguns Trabalhos</h2>
+<section class="section">
+    <h2>Algum dos nossos trabalhos</h2><br><br>
 
-<div class="gallery">
-  <div class="img-box"><img src="Realismo.jpg"><h3>Realismo</h3></div>
-  <div class="img-box"><img src="Blackwork.jpg"><h3>Blackwork</h3></div>
-  <div class="img-box"><img src="Aquarela.jpg"><h3>Aquarela</h3></div>
-  <div class="img-box"><img src="Tribal.jpg"><h3>Tribal</h3></div>
-  <div class="img-box"><img src="Minimalista.jpg"><h3>Minimalista</h3></div>
-  <div class="img-box"><img src="Sketch.jpg"><h3>Sketch</h3></div>
+<div class="features">
+    <div class="img-box"><img src="Realismo.jpg"><h3>Realismo</h3></div>
+    <div class="img-box"><img src="Old_School_Tradicional.jpg"><h3>Old School</h3></div>
+    <div class="img-box"><img src="Blackwork.jpg"><h3>Blackwork</h3></div>
+    <div class="img-box"><img src="Aquarela.jpg"><h3>Aquarela</h3></div>
+    <div class="img-box"><img src="Tribal.jpg"><h3>Tribal</h3></div>
+    <div class="img-box"><img src="Neo_Tradiciona.jpg"><h3>Neo Tradiciona</h3></div>
+    <div class="img-box"><img src="Geometrico.jpg"><h3>Geométrico</h3></div>
+    <div class="img-box"><img src="Oriental.jpg"><h3>Oriental</h3></div>
+    <div class="img-box"><img src="Sketch.jpg"><h3>Sketch</h3></div>
+    <div class="img-box"><img src="Biomecanico.jpg"><h3>Biomecânico</h3></div>
+    <div class="img-box"><img src="Minimalista.jpg"><h3>Minimalista</h3></div>
+    <div class="img-box"><img src="Trash_Polka.jpg"><h3>Trash Polka</h3></div>
 </div>
-</div>
+
+    </div>
 </section>
 
-<section class="form-section" id="form">
-<div class="container">
-<h2>Receber mais informações</h2>
+<!-- Seção do formulário -->
+<section class="section form-section" id="form">
+    <h2>Receber mais informações</h2>
 
-<form>
-  <input type="text" placeholder="Seu nome" required>
-  <input type="email" placeholder="Seu email" required>
-  <button type="submit">Enviar</button>
-</form>
-</div>
+    <!-- Formulário de captura de dados -->
+    <form>
+        <!-- Campo de nome -->
+        <input type="text" placeholder="Seu nome" required>
+
+        <!-- Campo de email -->
+        <input type="email" placeholder="Seu email" required>
+
+        <!-- Botão de envio -->
+        <button type="submit">Enviar</button>
+    </form>
 </section>
 
+<!-- Rodapé -->
 <footer>
-  <p>© 2026 Studio Vida - Todos os direitos reservados</p>
+    <p>© 2026 Studio Vida - Todos os direitos reservados</p>
 </footer>
 
 </body>
